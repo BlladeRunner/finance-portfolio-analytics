@@ -21,3 +21,15 @@ SELECT ticker,
 FROM prices
 GROUP BY ticker
 ORDER BY null_adj_close DESC;
+
+SELECT COUNT(*) AS rows_in_prices FROM prices;
+
+SELECT ticker,
+       MIN(date) AS min_date,
+       MAX(date) AS max_date,
+       COUNT(*)  AS rows_per_ticker
+FROM prices
+GROUP BY ticker;
+
+SELECT * FROM v_returns LIMIT 10;
+SELECT * FROM v_monthly_perf LIMIT 10;
